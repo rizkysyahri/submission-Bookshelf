@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.book-line {
+  width: 100%;
+  border-top-width: 1px;
+}
+
+@media (min-width: 640px) {
+  .sm\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .sm\:col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
+  .sm\:flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.book-line {
+  width: 100%;
+  border-top-width: 1px;
+}
+
+.book-cover {
+  margin-right: 2vw;
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  vertical-align: middle;
+}
+
+img {
+  width: 60px;
+  height: 90px;
+  border-radius: 0.75rem;
+}
+
+.book {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.action-button {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  gap: 8px;
+}
+
+.book-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.book-year {
+  font-weight: 500;
+}
+
+.book-author {
+  font-size: 14px;
+  line-height: 8px;
+  margin-top: 3px;
+  margin-bottom: 8px;
+}
+
+.book-detail-choose {
+  display: flex;
+  flex-direction: column;
+}
+
+#checklist {
+  background-color: transparent;
+  position: relative;
+  border-style: none;
+  padding: 0px;
+  border-radius: 9999px;
+  color: inherit;
+}
+
+#checklist:hover {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.fa.fa-check {
+  display: inline-flex;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa.fa-book-open-reader {
+  display: inline-flex;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa.fa-trash {
+  display: inline-flex;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+
+#delete:hover {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+#delete {
+  background-color: transparent;
+  position: relative;
+  border-style: none;
+  padding: 0px;
+  border-radius: 9999px;
+  color: inherit;
+}
+
+.Luihflaefhjadhuh {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.button-svg {
+  display: inline-flex;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .Luihflaefhjadhuh {
+    flex-direction: row;
+  }
+}
+
+.booksCard {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  grid-gap: 12px;
+  list-style: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  justify-content: center;
+  align-items: center;
+  max-width: 42rem; /* 672px */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .booksCard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.book-search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  border-radius: 1rem; /* 16px */
+  padding: 7px;
+}
+
+.shadow-search {
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+
+.author-book {
+  font-size: 14px;
+  line-height: 8px;
+  margin-top: 3px;
+  margin-bottom: 25px;
+}
+
+.inComplete{
+  background-color: rgb(66, 163, 66);
+}
+
+.Complete {
+  background-color: #fca5a5;
+}
+
+.status {
+  white-space: nowrap;
+  width: 100%;
+  font-size: 12px;
+  padding: 3px 5px 3px 5px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+

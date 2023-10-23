@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="dist/output.css" rel="stylesheet" />
+    <link href="src/input.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header
+      class="flex items-center justify-center p-5 bg-gradient-to-b from-teal-100 to-transparent to-90% dark:from-cyan-200"
+    >
+      <h1 class="font-medium mb-2">
+        <span class="text-cyan-400 text-4xl">E-Bookshelf</span> Apps.
+      </h1>
+    </header>
+
+    <section>
+      <div class="flex flex-col items-center">
+        <div
+          class="w-full h-[80px] bg-gradient-to-t from-teal-100 to-transparent to-90% dark:from-cyan-200"
+        ></div>
+        <div class="box-border w-full px-4">
+          <div id="search" class="search">
+            <div class="w-full max-w-2xl mx-auto -translate-y-[50%]">
+              <div
+                class="flex relative box-border items-center h-[64px] bg-white shadow-2xl rounded-2xl"
+              >
+                <div class="flex flex-1 items-center h-full px-7">
+                  <input
+                    type="search"
+                    id="search-books"
+                    name=""
+                    class="outline outline-transparent text-lg h-full w-full p-0"
+                    placeholder="Cari buku (Opsional)"
+                  />
+
+                  <button
+                    id="searchButton"
+                    type="submit"
+                    class="hover:bg-accent hover:bg-brother rounded-full button-svg"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-search w-5 h-5"
+                    >
+                      <circle cx="11" cy="11" r="8" />
+                      <path d="m21 21-4.3-4.3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="booksCard"></div>
+          </div>
+
+          <div class="w-full max-w-2xl mx-auto mt-14">
+            <div class="h-auto shadow-lg rounded-2xl px-8 bg-white">
+              <h2 class="py-4 text-center text-2xl">Masukan Buku Baru</h2>
+              <form id="formIsInputBook" class="pb-5">
+                <div class="py-2">
+                  <label for="inputIsTitle" class="font-medium">Judul :</label>
+                  <input
+                    type="text"
+                    id="inputIsTitle"
+                    name="name"
+                    class="w-full border-2 border-solid rounded-md outline outline-transparent px-3 h-10"
+                    placeholder="Cari Buku"
+                  />
+                </div>
+                <div class="py-1">
+                  <label for="inputIsAuthor" class="font-medium"
+                    >Penulis :</label
+                  >
+                  <input
+                    type="text"
+                    id="inputIsAuthor"
+                    name="writer"
+                    class="w-full border-2 border-solid rounded-md outline outline-transparent px-3 h-10"
+                    placeholder="Cari Penulis"
+                  />
+                </div>
+                <div class="py-1">
+                  <label for="inputIsYear" class="font-medium">Tahun :</label>
+                  <input
+                    type="number"
+                    id="inputIsYear"
+                    class="w-full border-2 border-solid rounded-md outline outline-transparent px-3 h-10"
+                    placeholder="Tahun"
+                  />
+                </div>
+                <div class="py-1">
+                  <label for="inputIsLinkCover" class="font-medium"
+                    >Link Cover Buku :</label
+                  >
+                  <input
+                    type="text"
+                    id="inputIsLinkCover"
+                    class="w-full border-2 border-solid rounded-md outline outline-transparent px-3 h-10"
+                    placeholder="Link Cover Buku"
+                  />
+                </div>
+                <div class="py-5">
+                  <label
+                    for="inputIsBookComplete"
+                    class="font-medium pr-3 text-lg"
+                    >Selesai Dibaca</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inputIsBookComplete"
+                    class="w-4 h-4"
+                    placeholder="Cari Buku"
+                  />
+                </div>
+                <button
+                  class="px-5 py-4 bg-black rounded-lg text-white"
+                  type="submit"
+                  id="buttonSubmit"
+                  onclick="changeInnerText()"
+                >
+                  Masukkan buku ke rak
+                  <span class="font-bold" id="innerTextSpan"
+                    >Belum selesai dibaca</span
+                  >
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="flex items-center justify-center">
+      <div class="Luihflaefhjadhuh">
+        <div class="h-full shadow-lg rounded-2xl px-8 p-4 bg-white">
+          <div class="pb-8">
+            <h2
+              class="text-center text-lg font-semibold underline underline-offset-4 decoration-2"
+            >
+              Belum selesai dibaca
+            </h2>
+            <p class="text-center font-light text-sm">
+              You can read the e-book of your choice here. Happy reading
+            </p>
+          </div>
+          <div
+            id="unIsCompletedBook"
+            class="rounded-md flex flex-wrap justify-start box-border flex-col"
+          ></div>
+        </div>
+
+        <div class="h-full shadow-lg rounded-2xl px-8 p-4 bg-white">
+          <div class="pb-8">
+            <h2
+              class="text-center text-lg font-semibold underline underline-offset-4 decoration-2"
+            >
+              Selesai dibaca
+            </h2>
+            <p class="text-center text-sm font-light">
+              You can read the e-book of your choice here. Happy reading
+            </p>
+          </div>
+          <div
+            id="isCompletedBook"
+            class="rounded-md flex flex-wrap justify-start box-border flex-col"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-10 grid grid-cols-12 gap-x-20 px-4">
+      <span class="col-span-6 sm:col-span-5">@2023</span>
+      <span class="col-span-5 sm:flex hidden justify-start"
+        >Built by Rizky Syahri Ramadhan</span
+      >
+
+      <span class="col-span-6 sm:col-span-2 text-right">Me</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
